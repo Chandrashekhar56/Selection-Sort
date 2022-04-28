@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Selection sort</title>
+</head>
+<body>
+<script>
+function selection_sort_function(arr) 
+{ 
+    var length_of_arr = arr.length;
+        
+    for(var x = 0; x <length_of_arr; x++) 
+    {
+        var minimum = x;
+        for(var y = x+1; y < length_of_arr; y++)
+        {
+            if(arr[y] < arr[minimum])
+             {
+                minimum=y; 
+            }
+         }
+         if (minimum != x) 
+         {
+                 var temporary = arr[x]; 
+ 				 arr[x] = arr[minimum];
+                 arr[minimum] = temporary;      
+         }
+    }
+    return arr;
+}
+var arr = [15, 10, 8, 12, 1, 3];
+selection_sort_function(arr);
+document.write("Sorted_Element: ");
+document.write(arr);
+</script>
+</body>
+</html>
